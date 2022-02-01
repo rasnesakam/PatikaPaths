@@ -6,14 +6,19 @@ public class MainClass {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Tutar giriniz: ");
-        double tutar = scanner.nextDouble();
+        System.out.println("1. Kenar");
+        int kenar1 = scanner.nextInt();
 
-        double kdv = tutar > 1000 ? 0.08d : 0.18d;
+        System.out.println("2. Kenar");
+        int kenar2 = scanner.nextInt();
 
-        double part = tutar * kdv;
-        double kdvli = tutar + part;
+        System.out.println("3. Kenar");
+        int kenar3 = scanner.nextInt();
 
-        System.out.printf("KDV'siz fiyat: %f\nKDV'li fiyat: %f\nKDV tutarı: %f\n",tutar,kdvli,part);
+        int u = (kenar1 + kenar2 + kenar3) / 2;
+
+        int alan = (int) Math.sqrt((double)(u * (u - kenar1) * (u - kenar2) * (u - kenar3)));
+
+        System.out.printf("Alan: %d",alan);
     }
 }

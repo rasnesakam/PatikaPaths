@@ -6,28 +6,14 @@ public class MainClass {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Matematik notu:");
-        int mat = scanner.nextInt();
+        System.out.println("Tutar giriniz: ");
+        double tutar = scanner.nextDouble();
 
-        System.out.println("Fizik notu:");
-        int fizik = scanner.nextInt();
+        double kdv = tutar > 1000 ? 0.08d : 0.18d;
 
-        System.out.println("Kimya notu:");
-        int kimya = scanner.nextInt();
+        double part = tutar * kdv;
+        double kdvli = tutar + part;
 
-        System.out.println("Türkçe notu:");
-        int turkce = scanner.nextInt();
-
-        System.out.println("Tarih notu:");
-        int tarih = scanner.nextInt();
-
-        System.out.println("Müzik notu:");
-        int muzik = scanner.nextInt();
-
-        int ort = (tarih + mat + fizik + kimya + turkce + muzik) / 6;
-
-        if (ort <= 60)
-            System.out.println("Sınıfta Kaldı");
-        else System.out.println("Sınıfı geçti");
+        System.out.printf("KDV'siz fiyat: %f\nKDV'li fiyat: %f\nKDV tutarı: %f\n",tutar,kdvli,part);
     }
 }
